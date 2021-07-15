@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express()
 const morgan = require('morgan')
-const userRoutes = require('./routes/user')
+const authRoutes = require('./routes/auth')
 const cardRoutes = require('./routes/card')
 
 const {sequelize} = require('./models/index')
@@ -9,7 +9,7 @@ const {sequelize} = require('./models/index')
 app.use(morgan('dev'))
 require('dotenv').config()
 app.use(express.json());
-app.use('/v1',userRoutes)
+app.use('/v1',authRoutes)
 app.use('/v1',cardRoutes)
 
 
