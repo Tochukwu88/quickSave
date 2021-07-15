@@ -1,0 +1,90 @@
+'use strict';
+
+
+
+module.exports = {
+  up: async (queryInterface, DataTypes) => {
+    await queryInterface.createTable('Cards', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER
+      },
+      userId:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+      },
+     
+      email:{
+        type:DataTypes.STRING,
+        allowNull:false
+      },
+      amount:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+      },
+      authorization_code: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      card_type: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      last4: {
+        type: DataTypes.INTEGER,
+        allowNull:false
+      },
+      exp_month: {
+        type: DataTypes.INTEGER,
+        allowNull:false
+      },
+      exp_year: {
+        type: DataTypes.INTEGER,
+        allowNull:false
+      },
+      bin: {
+        type: DataTypes.INTEGER,
+        allowNull:false
+      },
+      bank: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      channel: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      signature: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      reusable: {
+        type: DataTypes.BOOLEAN,
+        defaultValue:true,
+        allowNull:false
+      },
+      country_code: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      account_name: {
+        type: DataTypes.STRING,
+        allowNull:false
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+        
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE
+      }
+    });
+  },
+  down: async (queryInterface, DataTypes) => {
+    await queryInterface.dropTable('Cards');
+  }
+};
