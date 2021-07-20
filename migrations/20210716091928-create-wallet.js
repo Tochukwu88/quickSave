@@ -8,22 +8,18 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      cardId:{
+      cardId: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull: false
       },
-      userId:{
+      userId: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull: false
       },
-      amount: {
-        type: DataTypes.INTEGER,
-        allowNull:false
-        
-      },
+
       balance: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

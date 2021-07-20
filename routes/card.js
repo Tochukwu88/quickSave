@@ -7,8 +7,10 @@ const {initPaystack} = require('../controllers/paystack')
 const router = express.Router()
 
 router.get("/chargecard" ,Cards.chargeCard )
-router.post("/pay" , initPaystack)
+
 router.get('/pay/verify',Cards.addCard)
+router.post("/pay" ,Auth.verifyToken, initPaystack)
+router.put("/card/update" , Cards.updateAmountAndInterval)
 
 
 
